@@ -1,0 +1,60 @@
+/* Main page */
+.stApp {
+    background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 50%, #e0f2fe 100%);
+}
+
+/* Main content */
+.block-container {
+    max-width: 900px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* Main title */
+h1 {
+    color: #312e81;
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -1px;
+}
+
+/* Subtitle */
+.stCaption {
+    color: #475569;
+    font-size: 1.05rem;
+}
+
+/* Selectbox */
+div[data-baseweb="select"] > div {
+    border-radius: 12px;
+    border: 1px solid #c7d2fe;
+    background-color: white;
+}
+
+/* Buttons */
+.stButton > button {
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+    padding: 0.7rem 1rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(79, 70, 229, 0.2);
+}
+
+/* Question box */
+div[data-testid="stAlert"] {
+    border-radius: 16px;
+    padding: 1.2rem;
+    border: 1px solid #c7d2fe;
+    background-color: #ffffff;
+}
+
+/* Divider */
+hr {
+    border-color: #cbd5e1;
+}

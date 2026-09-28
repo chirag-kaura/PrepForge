@@ -1,0 +1,6 @@
+services:
+  - type:web
+    name: prepforge
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: Streamlit run frontend/app.py --server.address 0.0.0.0 --server.port $PORT
