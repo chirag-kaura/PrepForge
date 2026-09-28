@@ -1,60 +1,164 @@
-/* Main page */
+/* ================================
+   PrepForge - Global Theme
+   ================================ */
+
 .stApp {
-    background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 50%, #e0f2fe 100%);
+    background: linear-gradient(
+        135deg,
+        #eef2ff 0%,
+        #f8fafc 50%,
+        #e0f2fe 100%
+    );
+    color: #0f172a;
 }
 
-/* Main content */
+/* Main container */
 .block-container {
     max-width: 900px;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding: 3rem 2rem;
 }
 
-/* Main title */
+/* ================================
+   Typography
+   ================================ */
+
 h1 {
-    color: #312e81;
+    color: #1e1b4b !important;
     font-size: 3rem !important;
     font-weight: 800 !important;
     letter-spacing: -1px;
 }
 
-/* Subtitle */
+h2,
+h3 {
+    color: #1e293b !important;
+}
+
+p,
+label,
+.stMarkdown,
 .stCaption {
-    color: #475569;
-    font-size: 1.05rem;
+    color: #334155 !important;
 }
 
-/* Selectbox */
+.stCaption {
+    font-size: 1.05rem !important;
+}
+
+/* ================================
+   Selectbox
+   ================================ */
+
 div[data-baseweb="select"] > div {
-    border-radius: 12px;
-    border: 1px solid #c7d2fe;
-    background-color: white;
+    background-color: #ffffff !important;
+    border: 2px solid #c7d2fe !important;
+    border-radius: 12px !important;
+    color: #1e293b !important;
 }
 
-/* Buttons */
+div[data-baseweb="select"] span {
+    color: #1e293b !important;
+}
+
+/* Dropdown text */
+ul[role="listbox"] {
+    background-color: #ffffff !important;
+}
+
+li[role="option"] {
+    color: #1e293b !important;
+}
+
+/* ================================
+   Buttons
+   ================================ */
+
 .stButton > button {
     width: 100%;
+    min-height: 48px;
     border-radius: 12px;
-    border: none;
-    padding: 0.7rem 1rem;
-    font-weight: 600;
+    border: 2px solid #4f46e5;
+    background-color: #4f46e5;
+    color: #ffffff !important;
+    font-size: 1rem;
+    font-weight: 700;
     transition: all 0.2s ease;
 }
 
+.stButton > button p {
+    color: #ffffff !important;
+}
+
 .stButton > button:hover {
+    background-color: #3730a3;
+    border-color: #3730a3;
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(79, 70, 229, 0.2);
 }
 
-/* Question box */
+/* ================================
+   Question Box
+   ================================ */
+
 div[data-testid="stAlert"] {
-    border-radius: 16px;
-    padding: 1.2rem;
-    border: 1px solid #c7d2fe;
-    background-color: #ffffff;
+    background-color: #ffffff !important;
+    border: 2px solid #c7d2fe !important;
+    border-radius: 16px !important;
+    padding: 1.2rem !important;
 }
 
-/* Divider */
+div[data-testid="stAlert"] p {
+    color: #1e293b !important;
+    font-size: 1.05rem !important;
+    line-height: 1.7 !important;
+}
+
+/* ================================
+   Divider
+   ================================ */
+
 hr {
-    border-color: #cbd5e1;
+    border-color: #cbd5e1 !important;
+}
+
+/* ================================
+   Mobile
+   ================================ */
+
+@media (max-width: 768px) {
+
+    .block-container {
+        padding: 1.5rem 1rem !important;
+    }
+
+    h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    p,
+    label {
+        font-size: 0.95rem !important;
+    }
+
+    .stCaption {
+        font-size: 0.95rem !important;
+    }
+
+    .stButton > button {
+        min-height: 50px;
+        font-size: 0.95rem;
+    }
+
+    div[data-testid="stAlert"] {
+        padding: 1rem !important;
+    }
+
+    div[data-testid="stAlert"] p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+    }
 }
