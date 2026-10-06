@@ -31,4 +31,4 @@ def generate_question(
     latency = time.perf_counter() - start_time
     print(f"LLM latency: {latency:.2f} seconds")    
 
-    return response.choices[0].message.content
+    return response.choices[0].message.content, latency

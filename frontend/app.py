@@ -64,7 +64,7 @@ with col1:
     if st.button("Generate Question", use_container_width=True):
         try:
             with st.spinner("Generating question..."):
-                st.session_state.question = generate_question(
+                st.session_state.question, llm_latency = generate_question(
                     subject, 
                     topic,
                     difficulty,
@@ -88,10 +88,14 @@ with col1:
                     db.close()
 
                 db_latency = time.perf_counter() - db_start
-                print(f"Database latency: {db_latency:.2f} seconds")
 
                 total_latency = time.perf_counter() - start_time
-                print(f"Total request latency: {total_latency:.2f} seconds")
+
+                st.success(
+                    f"Latency — LLM: {llm_latency:.2f}s | "
+                    f"Database: {db_latency:.2f}s | "
+                    f"Total: {total_latency:.2f}s"
+                )
 
 
         except Exception as e:
