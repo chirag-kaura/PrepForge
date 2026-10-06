@@ -98,8 +98,8 @@ with col1:
                 )
 
 
-        except Exception as e:
-            st.error(f"Something went wrong: {e}.")
+        except Exception:
+            st.error("Something went wrong. Please try again.")
 
 
 with col2:
