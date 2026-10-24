@@ -1,164 +1,147 @@
 /* ================================
-   PrepForge - Global Theme
+   PrepForge - Enterprise Design System
    ================================ */
 
-.stApp {
-    background: linear-gradient(
-        135deg,
-        #eef2ff 0%,
-        #f8fafc 50%,
-        #e0f2fe 100%
-    );
-    color: #0f172a;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+html, body, [class*="css"] {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 
-/* Main container */
+/* Widescreen container */
 .block-container {
-    max-width: 900px;
-    padding: 3rem 2rem;
+    max-width: 1240px !important;
+    padding: 2rem 2.5rem !important;
 }
 
-/* ================================
-   Typography
-   ================================ */
-
-h1 {
-    color: #1e1b4b !important;
-    font-size: 3rem !important;
-    font-weight: 800 !important;
-    letter-spacing: -1px;
+/* Headings */
+h1, h2, h3, h4 {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
 }
 
-h2,
-h3 {
-    color: #1e293b !important;
-}
-
-p,
-label,
-.stMarkdown,
-.stCaption {
-    color: #334155 !important;
-}
-
-.stCaption {
-    font-size: 1.05rem !important;
-}
-
-/* ================================
-   Selectbox
-   ================================ */
-
-div[data-baseweb="select"] > div {
-    background-color: #ffffff !important;
-    border: 2px solid #c7d2fe !important;
-    border-radius: 12px !important;
-    color: #1e293b !important;
-}
-
-div[data-baseweb="select"] span {
-    color: #1e293b !important;
-}
-
-/* Dropdown text */
+/* BaseWeb Dropdown Popover Menus (Fixes Invisible Text) */
+div[data-baseweb="popover"],
 ul[role="listbox"] {
-    background-color: #ffffff !important;
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
 }
 
-li[role="option"] {
-    color: #1e293b !important;
+ul[role="listbox"] li {
+    color: #f8fafc !important;
+    background-color: transparent !important;
+    font-size: 0.95rem !important;
+    padding: 8px 14px !important;
 }
 
-/* ================================
-   Buttons
-   ================================ */
+ul[role="listbox"] li:hover,
+ul[role="listbox"] li[aria-selected="true"] {
+    background-color: #334155 !important;
+    color: #ffffff !important;
+}
 
-.stButton > button {
-    width: 100%;
-    min-height: 48px;
+/* Question Container */
+.question-card {
     border-radius: 12px;
-    border: 2px solid #4f46e5;
-    background-color: #4f46e5;
-    color: #ffffff !important;
-    font-size: 1rem;
-    font-weight: 700;
-    transition: all 0.2s ease;
+    padding: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.stButton > button p {
-    color: #ffffff !important;
+/* Universal Answer Canvas (Code & Conceptual) */
+.stTextArea textarea {
+    border-radius: 10px !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    padding: 1rem !important;
+    tab-size: 4 !important;
+}
+
+/* Buttons */
+.stButton > button {
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    min-height: 44px !important;
+    transition: all 0.15s ease-in-out !important;
+    border: none !important;
 }
 
 .stButton > button:hover {
-    background-color: #3730a3;
-    border-color: #3730a3;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25) !important;
 }
 
-/* ================================
-   Question Box
-   ================================ */
-
-div[data-testid="stAlert"] {
-    background-color: #ffffff !important;
-    border: 2px solid #c7d2fe !important;
-    border-radius: 16px !important;
-    padding: 1.2rem !important;
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 }
 
-div[data-testid="stAlert"] p {
-    color: #1e293b !important;
-    font-size: 1.05rem !important;
-    line-height: 1.7 !important;
+.badge-easy {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.25);
 }
 
-/* ================================
-   Divider
-   ================================ */
-
-hr {
-    border-color: #cbd5e1 !important;
+.badge-medium {
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.25);
 }
 
-/* ================================
-   Mobile
-   ================================ */
+.badge-hard {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+}
 
-@media (max-width: 768px) {
+.badge-subject {
+    background: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+    border: 1px solid rgba(99, 102, 241, 0.25);
+}
 
+.badge-followup {
+    background: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+/* Timer Badge right above question */
+.timer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(56, 189, 248, 0.12);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
     .block-container {
-        padding: 1.5rem 1rem !important;
+        padding: 1rem 1rem !important;
     }
-
-    h1 {
-        font-size: 2.2rem !important;
-        line-height: 1.2 !important;
-    }
-
-    h2 {
-        font-size: 1.5rem !important;
-    }
-
-    p,
-    label {
-        font-size: 0.95rem !important;
-    }
-
-    .stCaption {
-        font-size: 0.95rem !important;
-    }
-
-    .stButton > button {
-        min-height: 50px;
-        font-size: 0.95rem;
-    }
-
-    div[data-testid="stAlert"] {
-        padding: 1rem !important;
-    }
-
-    div[data-testid="stAlert"] p {
-        font-size: 1rem !important;
-        line-height: 1.6 !important;
+    div[data-testid="column"] {
+        width: 100% !important;
+        flex: 1 1 100% !important;
     }
 }
