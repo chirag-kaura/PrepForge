@@ -19,10 +19,20 @@ def get_redirect_uri() -> str:
     return "http://localhost:8501"
 
 
+def is_google_auth_configured() -> bool:
+    """
+    Checks if Google OAuth credentials have been supplied in the environment.
+    """
+    return bool(settings.GOOGLE_CLIENT_ID and settings.GOOGLE_CLIENT_SECRET)
+
+
 def get_google_auth_url() -> str:
     """
     Generates the Google OAuth 2.0 authorization URL.
     """
+    if not is_google_auth_configured():
+        return ""
+
     redirect_uri = get_redirect_uri()
     base_url = "https://accounts.google.com/o/oauth2/v2/auth"
     params = {
