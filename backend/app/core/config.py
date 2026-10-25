@@ -6,6 +6,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str
     GOOGLE_CLIENT_ID: str = ""
     GOOGLE_CLIENT_SECRET: str = ""
+    REDIRECT_URI: str = ""
 
     model_config = SettingsConfigDict(
         env_file=".env",

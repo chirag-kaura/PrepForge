@@ -12,10 +12,14 @@ from backend.app.models.user import User
 def get_redirect_uri() -> str:
     """
     Automatically detects if running on Render production or localhost.
+    Can be explicitly overridden via REDIRECT_URI in environment variables.
     """
+    if settings.REDIRECT_URI and settings.REDIRECT_URI.strip():
+        return settings.REDIRECT_URI.strip()
+
     render_url = os.environ.get("RENDER_EXTERNAL_URL")
     if render_url:
-        return f"{render_url.rstrip('/')}/"
+        return render_url.rstrip("/")
     return "http://localhost:8501"
 
 
